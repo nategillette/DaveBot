@@ -28,18 +28,13 @@ async def on_message(message):
 	if message.author == client.user:
 		return
 
-	for_Dave = [
-	'Kill Yourself Dave',
-	'Fuck Off Dave',
-	'Eat A Bag Of Dicks Dave',
-	'Dave You Corporate Fucking Cock Sleeve'
-	]
+	for_Dave = []
 
 	for_Chris = [
 	'Have Another Drink Lahey'
 	]
 
-	if 'dave' in message.content.lower() or 'deaf fuck' in message.content.lower():
+	if 'dave' in message.content.lower():
 		response = random.choice(for_Dave)
 		await message.channel.send(response)
 	
