@@ -9,7 +9,13 @@ load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
 GUILD = os.getenv('DISCORD_GUILD')
 
-client = discord.Client(intents=discord.Intents.default())
+intents = discord.Intents.default()
+intents.messages = True
+intents.guilds = True
+intents.members = True
+intents.message_content = True
+
+client = discord.Client(intents=intents)
 
 @client.event
 async def on_ready():
@@ -28,11 +34,14 @@ async def on_message(message):
 	if message.author == client.user:
 		return
 
-	for_Dave = []
+	for_Dave = [
+	"What?",
+	"...right :thumbsup:"
+	]
 
 	for_Chris = [
 	'Have Another Drink Lahey'
-	]
+	]	
 
 	if 'dave' in message.content.lower():
 		response = random.choice(for_Dave)
