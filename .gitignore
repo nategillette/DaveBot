@@ -1,5 +1,5 @@
 # ignore all files in files/ dir
 *.env
 
-# ignore the libs
+# ignore the virtual environment
 bot-env/*
